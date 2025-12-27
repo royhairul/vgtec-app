@@ -1,0 +1,146 @@
+import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/services.dart';
+import 'package:image/image.dart' as img;
+import 'package:tflite_flutter/tflite_flutter.dart';
+import '../models/detection_result.dart';
+
+/// Service untuk deteksi kerusakan jalan menggunakan TFLite model
+class DetectionService {
+  static final DetectionService instance = DetectionService._();
+  DetectionService._();
+
+  Interpreter? _interpreter;
+  bool _isInitialized = false;
+
+  /// Initialize TFLite model
+  Future<void> initialize() async {
+    if (_isInitialized) return;
+
+    try {
+      print('🔄 Loading TFLite model...');
+      
+      // Load model dari assets
+      _interpreter = await Interpreter.fromAsset(
+        'assets/models/mobilenet_ssd_final.tflite',
+        options: InterpreterOptions()..threads = 4,
+      );
+
+      _isInitialized = true;
+      print('✅ TFLite model loaded successfully');
+      print('📊 Input shape: ${_interpreter?.getInputTensors()}');
+      print('📊 Output shape: ${_interpreter?.getOutputTensors()}');
+    } catch (e) {
+      print('❌ Error loading TFLite model: $e');
+      rethrow;
+    }
+  }
+
+  /// Dispose model
+  void dispose() {
+    _interpreter?.close();
+    _interpreter = null;
+    _isInitialized = false;
+    print('🗑️ TFLite model disposed');
+  }
+
+  /// Deteksi dari image file
+  Future<List<Map<String, dynamic>>> detectFromImage(File imageFile) async {
+    if (!_isInitialized) {
+      await initialize();
+    }
+
+    if (_interpreter == null) {
+      throw Exception('Model not initialized');
+    }
+
+    try {
+      // Load dan resize image
+      final imageBytes = await imageFile.readAsBytes();
+      final image = img.decodeImage(imageBytes);
+      
+      if (image == null) {
+        throw Exception('Failed to decode image');
+      }
+
+      // Resize ke ukuran yang dibutuhkan model (320x320 based on actual input shape)
+      final resizedImage = img.copyResize(image, width: 320, height: 320);
+
+      // Konversi ke input tensor (normalize 0-1)
+      final input = _imageToByteListFloat32(resizedImage, 320);
+
+      // Output buffers - based on actual model output shape [1, 172, 4]
+      const maxDetections = 172;
+      var outputClasses = List.filled(1 * maxDetections * 4, 0.0).reshape([1, maxDetections, 4]);
+      var outputBoxes = List.filled(1 * maxDetections * 4, 0.0).reshape([1, maxDetections, 4]);
+
+      final outputs = {
+        0: outputClasses,
+        1: outputBoxes,
+      };
+
+      // Run inference
+      _interpreter!.runForMultipleInputs([input], outputs);
+
+      // Parse results
+      final detections = <Map<String, dynamic>>[];
+      
+      print('🔍 Processing detection results...');
+      print('📦 Output boxes: $outputBoxes');
+      print('� Output classes: $outputClasses');
+
+      // Model outputs single detection per inference
+      // Classes output format: [confidence, class_id, ?, ?]
+      final confidence = outputClasses[0][0][0];
+      final classIndex = outputClasses[0][0][1].toInt();
+
+      // Filter low confidence detections (threshold 0.5)
+      if (confidence >= 0.5 && classIndex >= 0) {
+        final box = outputBoxes[0][0];
+        
+        detections.add({
+          'class': RoadDamageClass.fromIndex(classIndex),
+          'confidence': confidence,
+          'boundingBox': {
+            'top': box[0],
+            'left': box[1],
+            'bottom': box[2],
+            'right': box[3],
+          },
+        });
+
+        print('✅ Detected: ${RoadDamageClass.fromIndex(classIndex)} (${(confidence * 100).toStringAsFixed(1)}%)');
+      } else {
+        print('⚠️ No detection above threshold (confidence: ${confidence.toStringAsFixed(3)})');
+      }
+
+      return detections;
+    } catch (e) {
+      print('❌ Detection error: $e');
+      rethrow;
+    }
+  }
+
+  /// Convert image ke ByteList Float32 untuk TFLite input
+  Uint8List _imageToByteListFloat32(img.Image image, [int size = 320]) {
+    final convertedBytes = Float32List(1 * size * size * 3);
+    final buffer = Float32List.view(convertedBytes.buffer);
+    int pixelIndex = 0;
+
+    for (int i = 0; i < size; i++) {
+      for (int j = 0; j < size; j++) {
+        final pixel = image.getPixel(j, i);
+        
+        // Normalize to 0-1
+        buffer[pixelIndex++] = (pixel.r / 255.0);
+        buffer[pixelIndex++] = (pixel.g / 255.0);
+        buffer[pixelIndex++] = (pixel.b / 255.0);
+      }
+    }
+
+    return convertedBytes.buffer.asUint8List();
+  }
+
+  /// Check if model is ready
+  bool get isReady => _isInitialized && _interpreter != null;
+}
