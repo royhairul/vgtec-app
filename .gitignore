@@ -81,6 +81,8 @@ app.*.map.json
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
+__MACOSX/
+
 # Coverage
 coverage/
 
@@ -108,3 +110,5 @@ local.properties
 # Firebase
 google-services.json
 GoogleService-Info.plist
+
+*.iml
