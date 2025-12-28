@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
         envPassword = dotenv.env['DEFAULT_USER_PASSWORD'];
       } catch (e) {
         // .env not loaded, use fallback
-        envEmail = 'admin@poliwangi.com';
+        envEmail = 'admin@poliwangi.ac.id';
         envPassword = 'admin123';
       }
 
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: InputDecoration(
                       labelText: "Email",
                       labelStyle: const TextStyle(color: Colors.white),
-                      hintText: "mail@poliwangi.com",
+                      hintText: "mail@poliwangi.ac.id",
                       hintStyle: const TextStyle(color: Colors.white70),
                       errorStyle: const TextStyle(color: Colors.redAccent),
                       contentPadding: const EdgeInsets.symmetric(
