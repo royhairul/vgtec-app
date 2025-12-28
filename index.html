@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="VGTec - Aplikasi mobile untuk identifikasi, perhitungan dimensi, dan kebutuhan aspal pada kerusakan jalan lentur berbasis deep learning dengan integrasi sensor ultrasonic dan infrared.">
+    <meta name="keywords"
+        content="pavement detection, road damage, deep learning, YOLO, ultrasonic sensor, infrared sensor, asphalt calculation, dimensi kerusakan jalan">
+    <title>VGTec - Download Aplikasi Deteksi Kerusakan Jalan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="../assets/images/logo.png">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <img src="../assets/images/logo.png" alt="VGTec Logo" class="nav-logo">
+                <span>VGTec</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Fitur</a></li>
+                <li><a href="#download">Download</a></li>
+                <li><a href="#install">Cara Install</a></li>
+                <li><a href="#releases">Releases</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-background">
+                <div class="gradient-orb orb-1"></div>
+                <div class="gradient-orb orb-2"></div>
+                <div class="gradient-orb orb-3"></div>
+                <!-- Futuristic decorations -->
+                <div class="floating-particles">
+                    <div class="particle p1"></div>
+                    <div class="particle p2"></div>
+                    <div class="particle p3"></div>
+                    <div class="particle p4"></div>
+                    <div class="particle p5"></div>
+                    <div class="particle p6"></div>
+                </div>
+                <div class="circuit-lines">
+                    <div class="circuit c1"></div>
+                    <div class="circuit c2"></div>
+                    <div class="circuit c3"></div>
+                </div>
+            </div>
+
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <!-- Tech badge -->
+                    <div class="tech-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                        Deep Learning + Sensor Integration
+                    </div>
+                    <h1 class="hero-title">VGTec</h1>
+                    <p class="hero-tagline">Identifikasi & Analisis Kerusakan Jalan Lentur</p>
+                    <p class="hero-description">
+                        Aplikasi mobile dengan sistem identifikasi, perhitungan dimensi, dan estimasi kebutuhan aspal
+                        pada kerusakan jalan berbasis deep learning dengan integrasi sensor ultrasonic dan infrared.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#download" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Download Sekarang
+                            <span class="btn-version" id="hero-version">v1.0.0</span>
+                        </a>
+                        <a href="#features" class="btn btn-secondary">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polygon points="10 8 16 12 10 16 10 8" />
+                            </svg>
+                            Lihat Fitur
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-logo-panel">
+                    <div class="logo-showcase">
+                        <!-- Corner brackets decoration -->
+                        <div class="corner-bracket top-left"></div>
+                        <div class="corner-bracket top-right"></div>
+                        <div class="corner-bracket bottom-left"></div>
+                        <div class="corner-bracket bottom-right"></div>
+                        <!-- Glowing ring -->
+                        <div class="glow-ring"></div>
+                        <div class="logo-circle">
+                            <img src="../assets/images/logo.png" alt="VGTec Logo" class="showcase-logo">
+                        </div>
+                        <h2 class="showcase-title">Smart Pavement Analysis System</h2>
+                        <!-- Status indicator -->
+                        <div class="status-indicator">
+                            <span class="status-dot"></span>
+                            <span>Deep Learning Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                        Core Features
+                    </span>
+                    <h2 class="section-title">Fitur Unggulan</h2>
+                    <p class="section-subtitle">Sistem lengkap untuk identifikasi, pengukuran, dan estimasi kebutuhan
+                        perbaikan jalan</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Scan/Camera icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </div>
+                        <h3>Identifikasi Kerusakan</h3>
+                        <p>Deteksi dan klasifikasi jenis kerusakan jalan secara otomatis dengan kamera.</p>
+                        <div class="feature-tag">Computer Vision</div>
+                    </div>
+
+                    <div class="feature-card featured">
+                        <div class="feature-icon">
+                            <!-- Ruler/Dimension icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M21.3 8.7 8.7 21.3c-1 1-2.5 1-3.4 0l-2.6-2.6c-1-1-1-2.5 0-3.4L15.3 2.7c1-1 2.5-1 3.4 0l2.6 2.6c1 1 1 2.5 0 3.4Z" />
+                                <path d="m7.5 10.5 2 2" />
+                                <path d="m10.5 7.5 2 2" />
+                                <path d="m13.5 4.5 2 2" />
+                                <path d="m4.5 13.5 2 2" />
+                            </svg>
+                        </div>
+                        <h3>Perhitungan Dimensi</h3>
+                        <p>Ukur panjang, lebar, dan kedalaman kerusakan menggunakan sensor ultrasonic.</p>
+                        <div class="feature-tag">Ultrasonic</div>
+                    </div>
+
+                    <div class="feature-card featured">
+                        <div class="feature-icon">
+                            <!-- Calculator/Asphalt icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <rect x="4" y="2" width="16" height="20" rx="2" />
+                                <line x1="8" x2="16" y1="6" y2="6" />
+                                <line x1="16" x2="16" y1="14" y2="18" />
+                                <path d="M16 10h.01" />
+                                <path d="M12 10h.01" />
+                                <path d="M8 10h.01" />
+                                <path d="M12 14h.01" />
+                                <path d="M8 14h.01" />
+                                <path d="M12 18h.01" />
+                                <path d="M8 18h.01" />
+                            </svg>
+                        </div>
+                        <h3>Estimasi Kebutuhan Aspal</h3>
+                        <p>Hitung kebutuhan material aspal berdasarkan volume kerusakan terdeteksi.</p>
+                        <div class="feature-tag">Auto Calculate</div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- AI/Brain icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path
+                                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04" />
+                                <path
+                                    d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04" />
+                            </svg>
+                        </div>
+                        <h3>Deep Learning YOLOv11</h3>
+                        <p>Model neural network terbaru untuk akurasi deteksi yang tinggi.</p>
+                        <div class="feature-tag">Neural Network</div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Sensor/Wave icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M2 10v3" />
+                                <path d="M6 6v11" />
+                                <path d="M10 3v18" />
+                                <path d="M14 8v7" />
+                                <path d="M18 5v13" />
+                                <path d="M22 10v3" />
+                            </svg>
+                        </div>
+                        <h3>Sensor Ultrasonic</h3>
+                        <p>Pengukuran kedalaman kerusakan yang presisi dengan sensor ultrasonic.</p>
+                        <div class="feature-tag">Hardware</div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <!-- Infrared/Temperature icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" />
+                            </svg>
+                        </div>
+                        <h3>Sensor Infrared</h3>
+                        <p>Deteksi kondisi permukaan jalan dengan sensor infrared untuk analisis lebih akurat.</p>
+                        <div class="feature-tag">Hardware</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section" id="download">
+            <div class="container">
+                <h2 class="section-title">Download Versi Terbaru</h2>
+
+                <div class="download-card">
+                    <!-- Android Icon Header -->
+                    <div class="download-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M17.523 15.341a1 1 0 0 0 1-1v-5.5a1 1 0 0 0-2 0v5.5a1 1 0 0 0 1 1zm-11 0a1 1 0 0 0 1-1v-5.5a1 1 0 0 0-2 0v5.5a1 1 0 0 0 1 1zm10.5-7.5h-10a.5.5 0 0 0-.5.5v8a2 2 0 0 0 2 2h2v2.5a1 1 0 0 0 2 0v-2.5h2v2.5a1 1 0 0 0 2 0v-2.5h2a2 2 0 0 0 2-2v-8a.5.5 0 0 0-.5-.5zm-5-4.89a4.48 4.48 0 0 0-3.83 2.14l-.73-.73a.5.5 0 0 0-.71.71l.77.77a4.46 4.46 0 0 0-.97 2.15h9.03a4.46 4.46 0 0 0-.97-2.15l.77-.77a.5.5 0 0 0-.71-.71l-.73.73a4.48 4.48 0 0 0-1.92-2.14zm-1.5 3.39a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm3 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1z" />
+                        </svg>
+                    </div>
+
+                    <!-- Platform Badge -->
+                    <div class="platform-badge">
+                        <span class="platform-icon">📱</span>
+                        <span>Android APK</span>
+                    </div>
+
+                    <div class="download-info">
+                        <div class="version-badge">
+                            <span class="version-number" id="download-version">v1.0.0</span>
+                            <span class="version-tag" id="version-tag">Latest</span>
+                        </div>
+                        <p class="release-date" id="release-date">Loading...</p>
+                    </div>
+
+                    <!-- Enhanced Download Button -->
+                    <a href="#" id="download-btn" class="download-cta-btn">
+                        <div class="cta-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                        </div>
+                        <div class="cta-text">
+                            <span class="cta-title">Download APK</span>
+                            <span class="cta-subtitle" id="file-size-text">Klik untuk mengunduh</span>
+                        </div>
+                        <div class="cta-badge" id="file-size-badge"></div>
+                    </a>
+
+                    <!-- Download Stats -->
+                    <div class="download-stats">
+                        <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                            </svg>
+                            <span>Verified</span>
+                        </div>
+                        <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                            <span>Secure</span>
+                        </div>
+                        <div class="stat">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                            <span>Always Updated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="requirements">
+                    <h3>Persyaratan Sistem</h3>
+                    <ul>
+                        <li>Android 7.0 (Nougat) atau lebih tinggi</li>
+                        <li>Minimal 100MB ruang penyimpanan</li>
+                        <li>Kamera dengan resolusi minimal 720p</li>
+                        <li>GPS untuk fitur lokasi</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section class="install-section" id="install">
+            <div class="container">
+                <h2 class="section-title">Cara Install Aplikasi</h2>
+                <p class="section-subtitle">Ikuti langkah-langkah berikut untuk menginstall VGTec di perangkat Android
+                    Anda</p>
+
+                <div class="install-steps">
+                    <div class="install-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Download APK</h4>
+                            <p>Download file APK dari tombol download di atas. File akan tersimpan di folder Download.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="install-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Izinkan Install dari Sumber Tidak Dikenal</h4>
+                            <p>Buka <strong>Pengaturan → Keamanan → Sumber Tidak Dikenal</strong> dan aktifkan toggle.
+                            </p>
+                            <div class="code-block">
+                                Pengaturan → Keamanan → Sumber Tidak Dikenal
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="install-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Buka File APK</h4>
+                            <p>Buka file manager, navigasi ke folder Download, lalu tap file APK VGTec.</p>
+                        </div>
+                    </div>
+
+                    <div class="install-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Install Aplikasi</h4>
+                            <p>Tap tombol <strong>Install</strong> dan tunggu hingga proses instalasi selesai.</p>
+                        </div>
+                    </div>
+
+                    <div class="install-step completed">
+                        <div class="step-number">✓</div>
+                        <div class="step-content">
+                            <h4>Aplikasi Siap Digunakan!</h4>
+                            <p>Buka VGTec dari drawer aplikasi dan mulai deteksi kerusakan jalan.</p>
+                            <div class="tip">
+                                <strong>Tips:</strong> Berikan izin kamera dan lokasi saat diminta agar aplikasi
+                                berfungsi optimal.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Releases Section -->
+        <section class="releases-section" id="releases">
+            <div class="container">
+                <h2 class="section-title">Semua Releases</h2>
+
+                <div class="releases-list" id="releases-list">
+                    <!-- Releases will be populated by JavaScript -->
+                    <div class="loading-releases">
+                        <div class="spinner"></div>
+                        <p>Loading releases...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#features">Fitur</a>
+                    <a href="#download">Download</a>
+                    <a href="#install">Cara Install</a>
+                    <a href="#releases">Releases</a>
+                </div>
+                <p class="footer-copyright">© 2025 VGTec. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
