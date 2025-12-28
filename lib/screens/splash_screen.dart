@@ -164,13 +164,12 @@ class _SplashScreenState extends State<SplashScreen>
                         position: _textSlide,
                         child: FadeTransition(
                           opacity: _textOpacity,
-                          child: const Text(
+                          child: Text(
                             'Pavement Detector',
                             style: TextStyle(
                               fontSize: 22,
-                              color: Colors.white,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.w400,
+                              color: Colors.white.withValues(alpha: 0.5),
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),
