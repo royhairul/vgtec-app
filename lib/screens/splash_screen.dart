@@ -127,7 +127,7 @@ class _SplashScreenState extends State<SplashScreen>
                             child: Opacity(
                               opacity: _logoOpacity.value,
                               child: SizedBox(
-                                height: 250,
+                                height: 150,
                                 child: Image.asset(
                                   'assets/images/logo.png',
                                   fit: BoxFit.contain,

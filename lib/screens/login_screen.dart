@@ -88,8 +88,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image.asset(
                     "assets/images/logo.png",
                     fit: BoxFit.cover,
-                    width: 250,
-                    height: 250,
+                    width: 150,
+                    height: 150,
                   ),
                   Text(
                     "VGTec",
