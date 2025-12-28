@@ -6,6 +6,7 @@ const CONFIG = {
 
 // DOM Elements
 const heroVersion = document.getElementById('hero-version');
+const heroDownloadBtn = document.getElementById('hero-download-btn');
 const downloadVersion = document.getElementById('download-version');
 const versionTag = document.getElementById('version-tag');
 const releaseDate = document.getElementById('release-date');
@@ -70,6 +71,16 @@ function updateHeroSection(release) {
 
     if (heroVersion) {
         heroVersion.textContent = release.tag_name;
+    }
+
+    // Set hero download button URL
+    const apkAsset = findApkAsset(release);
+    if (heroDownloadBtn) {
+        if (apkAsset) {
+            heroDownloadBtn.href = apkAsset.browser_download_url;
+        } else {
+            heroDownloadBtn.href = release.html_url;
+        }
     }
 }
 
