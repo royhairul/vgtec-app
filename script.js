@@ -1,7 +1,7 @@
 // Configuration - Update this with your GitHub repository details
 const CONFIG = {
     owner: 'royhairul', // Replace with your GitHub username
-    repo: 'vgtec_app',  // Replace with your repository name
+    repo: 'vgtec-app',  // Replace with your repository name
 };
 
 // DOM Elements
